@@ -40,6 +40,7 @@
                                     <img class="rounded-circle avatar-xl" src="{{ asset('backend/assets/images/small/img-5.jpg') }}" alt="Card image cap">
                                 </div>
                             </div>
+                            <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Profile">
                         </form>
                         <!-- end row -->
                     </div>
