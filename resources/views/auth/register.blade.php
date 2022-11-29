@@ -4,12 +4,12 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Login | Upcube - Admin & Dashboard Template</title>
+        <title>Register | Upcube - Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -36,49 +36,63 @@
                             </div>
                         </div>
 
-                        <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
+                        <h4 class="text-muted text-center font-size-18"><b>Register</b></h4>
 
                         <div class="p-3">
-                            <form class="form-horizontal mt-3" action="index.html">
+                            <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
+                                @csrf
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
-                                        <input class="form-control" type="text" required="" placeholder="Username">
+                                        <input class="form-control" id="name" type="text" name="name" required="" placeholder="Name">
                                     </div>
                                 </div>
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
-                                        <input class="form-control" type="password" required="" placeholder="Password">
+                                        <input class="form-control" id="username" type="text" name="username" required="" placeholder="Username">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" id="email" type="email" name="email" required="" placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" id="password" type="password" name="password" required="" placeholder="Password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" id="password_confirmation" type="password" name="password_confirmation" required="" placeholder="Password Confirmation">
                                     </div>
                                 </div>
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="form-label ms-1" for="customCheck1">Remember me</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-3 text-center row mt-3 pt-1">
+                                <div class="form-group text-center row mt-3 pt-1">
                                     <div class="col-12">
-                                        <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Log In</button>
+                                        <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Register</button>
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-0 row mt-2">
-                                    <div class="col-sm-7 mt-3">
-                                        <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
-                                    </div>
-                                    <div class="col-sm-5 mt-3">
-                                        <a href="auth-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
+                                <div class="form-group mt-2 mb-0 row">
+                                    <div class="col-12 mt-3 text-center">
+                                        <a href="pages-login.html" class="text-muted">Already have account?</a>
                                     </div>
                                 </div>
                             </form>
+                            <!-- end form -->
                         </div>
-                        <!-- end -->
                     </div>
                     <!-- end cardbody -->
                 </div>
@@ -88,12 +102,14 @@
         </div>
         <!-- end -->
 
+
         <!-- JAVASCRIPT -->
         <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
+
         <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
     </body>
