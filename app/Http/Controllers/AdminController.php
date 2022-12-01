@@ -79,6 +79,7 @@ class AdminController extends Controller
 
         $hashedPassword = Auth::user()->password;
 
+        
         if (Hash::check($request->oldpassword, $hashedPassword)) {
             $users = User::find(Auth::id());
             $users->password = bcrypt($request->newpassword);
