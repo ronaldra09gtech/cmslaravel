@@ -16,22 +16,27 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
-    }// End Method
+        $notification_logout = array(
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/login')->with($notification_logout);
+    } // End Method
 
     public function Profile()
     {
         $id = Auth::user()->id;
         $adminData = User::find($id);
         return view('admin.admin_profile_view', compact('adminData'));
-    }// End Method
+    } // End Method
 
     public function EditProfile()
     {
         $id = Auth::user()->id;
         $editData = User::find($id);
         return view('admin.admin_profile_edit', compact('editData'));
-    }// End Method
+    } // End Method
 
     public function StoreProfile(Request $request)
     {
@@ -41,20 +46,20 @@ class AdminController extends Controller
         $data->username = $request->username;
         $data->email = $request->email;
 
-        if ($request->file('profile_image')){
+        if ($request->file('profile_image')) {
             $file = $request->file('profile_image');
 
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'), $filename);
             $data['profile_image'] = $filename;
         }
         $data->save();
 
-        $notification = array(
+        $notification_update_profile = array(
             'message' => 'Admin Profile Updated Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('admin.profile')->with($notification);
-    }// End Method
+        return redirect()->route('admin.profile')->with($notification_update_profile);
+    } // End Method
 }
