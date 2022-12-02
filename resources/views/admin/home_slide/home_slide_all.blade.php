@@ -11,8 +11,11 @@
                     <div class="card-body">
 
                         <h4 class="card-title">Home Slide Page</h4>
-                        <form method="POST" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('update.slider') }}" enctype="multipart/form-data">
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $homeslide->id }}">
+
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
@@ -55,7 +58,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#image').change(function(e){
+        $('#home_slide').change(function(e){
             var reader = new FileReader();
             reader.onload = function(e){
                 $('#showImage').attr('src',e.target.result);
