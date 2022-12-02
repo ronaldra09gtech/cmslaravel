@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 04:56 PM
+-- Generation Time: Dec 02, 2022 at 11:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -40,6 +40,29 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `home_slides`
+--
+
+CREATE TABLE `home_slides` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `short_title` varchar(255) DEFAULT NULL,
+  `home_slide` varchar(255) DEFAULT NULL,
+  `video_url` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `home_slides`
+--
+
+INSERT INTO `home_slides` (`id`, `title`, `short_title`, `home_slide`, `video_url`, `created_at`, `updated_at`) VALUES
+(1, 'Eat and Teach', '1st Restaurant with Teaching Tutor', NULL, 'https://www.youtube.com/watch?v=vixHgoML0tY', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -57,7 +80,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2022_12_02_074014_create_home_slides_table', 2);
 
 -- --------------------------------------------------------
 
@@ -123,7 +147,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `username`, `profile_image`, `remember_token`, `created_at`, `updated_at`) VALUES
 (4, 'demo', 'demo@gmail.com', '2022-11-28 21:37:00', '$2y$10$Ra1pJmwz67RMgbO0xHYZ9ulsrbf1liCkW6owTFy/IcRv7MjgIxVme', 'demo', NULL, NULL, '2022-11-28 21:36:40', '2022-11-28 21:37:00'),
-(5, 'test1', 'test1@gmail.com', '2022-11-29 05:58:13', '$2y$10$2y92kzGlSpsL.DLSBRMZ1OxXOU7tICiStXBngQwPz2lLFws6xUOce', 'test1', '202211291935270113334_118150450712486_1380413761801082502_n.jpg', NULL, '2022-11-29 05:57:54', '2022-11-29 11:35:42');
+(5, 'Ronald Figueroa Avila', 'ronaldra09gtech@gmail.com', '2022-11-29 05:58:13', '$2y$10$YDgOB9H.Rfau5Pz15hSErO4R8EJvbAI1a48NNjWrUDX5k47.j3wIm', 'ronaldra09', '202212011145wp6909960-civic-sir-wallpapers.jpg', NULL, '2022-11-29 05:57:54', '2022-12-01 03:45:39');
 
 --
 -- Indexes for dumped tables
@@ -135,6 +159,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `us
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `home_slides`
+--
+ALTER TABLE `home_slides`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -175,10 +205,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `home_slides`
+--
+ALTER TABLE `home_slides`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
