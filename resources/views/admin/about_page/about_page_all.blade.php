@@ -19,19 +19,19 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="title" type="text" value="" id="title">
+                                    <input class="form-control" name="title" type="text" value="{{ $aboutpage->title }}" id="title">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Short Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="short_title" type="text" value="" id="short_title">
+                                    <input class="form-control" name="short_title" type="text" value="{{ $aboutpage->short_title }}" id="short_title">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Short Description</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="video_url" type="text" value="" id="video_url">
+                                    <input class="form-control" name="video_url" type="text" value="{{ $aboutpage->short_desciption }}" id="video_url">
                                 </div>
                             </div>
                             <div class="row mb-3">
