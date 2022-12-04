@@ -10,11 +10,11 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Home Slide Page</h4>
-                        <form method="POST" action="{{ route('update.slider') }}" enctype="multipart/form-data">
+                        <h4 class="card-title">About Page</h4>
+                        <form method="POST" action="{{ route('update.about') }}" enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" name="id" value="">
+                            <input type="hidden" name="id" value="{{ $aboutpage->id }}">
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
