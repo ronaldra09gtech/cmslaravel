@@ -25,13 +25,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Short Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="short_title" type="text" value="{{ $aboutpage->short_title }}" id="short_title">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Short Description</label>
-                                <div class="col-sm-10">
-                                    <textarea id="short_description" name="short_description" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars.">{{ $aboutpage->short_description}}</textarea>
+                                    <textarea id="short_title" name="short_title" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars.">{{ $aboutpage->short_description}}</textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -51,7 +45,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($aboutpage->about_image))? url('upload/home_slide/'.$aboutpage->about_image):url('upload/no_image.jpg') }}" alt="Card image cap">
+                                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($aboutpage->about_image))? url('upload/home_about/'.$aboutpage->about_image):url('upload/no_image.jpg') }}" alt="Card image cap">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Slide">

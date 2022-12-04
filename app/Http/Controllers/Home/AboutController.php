@@ -27,7 +27,6 @@ class AboutController extends Controller
             About::findOrFail($about_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
-                'short_description' => $request->short_description,
                 'long_description' => $request->long_description,
                 'about_image' => $save_url,
             ]);
@@ -40,7 +39,6 @@ class AboutController extends Controller
             About::findOrFail($about_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
-                'short_description' => $request->short_description,
                 'long_description' => $request->long_description,
             ]);
             $notification = array(
