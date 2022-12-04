@@ -31,9 +31,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Short Description</label>
                                 <div class="col-sm-10">
-                                    <textarea required="" name="short_description" class="from-control" rows="5">
-                                        {{ $aboutpage->short_description}}
-                                    </textarea>
+                                    <textarea id="short_description" name="short_description" class="form-control" maxlength="225" rows="3" placeholder="This textarea has a limit of 225 chars.">{{ $aboutpage->short_description}}</textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -53,7 +51,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url('upload/home_slide/'.$homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
+                                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($aboutpage->about_image))? url('upload/home_slide/'.$aboutpage->about_image):url('upload/no_image.jpg') }}" alt="Card image cap">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Slide">
@@ -68,7 +66,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#home_slide').change(function(e){
+        $('#about_image').change(function(e){
             var reader = new FileReader();
             reader.onload = function(e){
                 $('#showImage').attr('src',e.target.result);
