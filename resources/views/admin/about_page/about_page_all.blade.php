@@ -31,7 +31,17 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Short Description</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="video_url" type="text" value="{{ $aboutpage->short_desciption }}" id="video_url">
+                                    <textarea required="" name="short_description" class="from-control" rows="5">
+                                        {{ $aboutpage->short_description}}
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Long Description</label>
+                                <div class="col-sm-10">
+                                    <textarea required="" name="long_description" class="from-control" rows="5">
+                                        {{ $aboutpage->long_description}}
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
