@@ -39,15 +39,15 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Long Description</label>
                                 <div class="col-sm-10">
-                                    <textarea required="" name="long_description" class="from-control" rows="5">
+                                    <textarea id="elm1" name="long_description">
                                         {{ $aboutpage->long_description}}
                                     </textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Slide Images</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">About Image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="home_slide" type="file" id="home_slide">
+                                    <input class="form-control" name="about_image" type="file" id="about_image">
                                 </div>
                             </div>
                             <div class="row mb-3">
